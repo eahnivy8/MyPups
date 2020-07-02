@@ -3,19 +3,42 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03D2C1304A35B63BC9CADE02 /* Pods_My_Bow_Wow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658BBD50A1B875375DC2C4FE /* Pods_My_Bow_Wow.framework */; };
+		1E51155024AC87A300B8D7F0 /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51154F24AC87A300B8D7F0 /* MemoListTableViewController.swift */; };
+		1E51155224AC885600B8D7F0 /* MemoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51155124AC885600B8D7F0 /* MemoDAO.swift */; };
+		1E51155424AC89EB00B8D7F0 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51155324AC89EB00B8D7F0 /* MemoTableViewCell.swift */; };
+		1E51155724AC8A8F00B8D7F0 /* MemoVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51155624AC8A8F00B8D7F0 /* MemoVO.swift */; };
+		1E51155A24AC8B1600B8D7F0 /* MyBowWow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E51155824AC8B1600B8D7F0 /* MyBowWow.xcdatamodeld */; };
+		1E51155D24AC8B9D00B8D7F0 /* MemoMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51155C24AC8B9D00B8D7F0 /* MemoMO+CoreDataProperties.swift */; };
+		1E51155E24AC8B9D00B8D7F0 /* MemoMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51155B24AC8B9D00B8D7F0 /* MemoMO+CoreDataClass.swift */; };
+		1E51156024AC8D4500B8D7F0 /* MemoReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51155F24AC8D4500B8D7F0 /* MemoReadViewController.swift */; };
 		1E529D4E24AAF00E00AA272A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E529D4D24AAF00E00AA272A /* AppDelegate.swift */; };
 		1E529D5024AAF00E00AA272A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E529D4F24AAF00E00AA272A /* SceneDelegate.swift */; };
 		1E529D5224AAF00E00AA272A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E529D5124AAF00E00AA272A /* ViewController.swift */; };
 		1E529D5524AAF00E00AA272A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E529D5324AAF00E00AA272A /* Main.storyboard */; };
 		1E529D5724AAF00F00AA272A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E529D5624AAF00F00AA272A /* Assets.xcassets */; };
 		1E529D5A24AAF00F00AA272A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E529D5824AAF00F00AA272A /* LaunchScreen.storyboard */; };
+		1E529D6224AAFF8700AA272A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E529D6124AAFF8700AA272A /* GoogleService-Info.plist */; };
+		1E550B1224AD7D2E00C44594 /* MemoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550B1124AD7D2E00C44594 /* MemoFormViewController.swift */; };
+		1E550B1424AD818000C44594 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550B1324AD818000C44594 /* LocationViewController.swift */; };
+		1E550B1624AD832100C44594 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550B1524AD832100C44594 /* ResultTableViewController.swift */; };
+		1E550B1824AD835800C44594 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550B1724AD835800C44594 /* ResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13D9EC15662134BE58EDC079 /* Pods-My Bow-Wow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Bow-Wow.debug.xcconfig"; path = "Target Support Files/Pods-My Bow-Wow/Pods-My Bow-Wow.debug.xcconfig"; sourceTree = "<group>"; };
+		1E51154F24AC87A300B8D7F0 /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
+		1E51155124AC885600B8D7F0 /* MemoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDAO.swift; sourceTree = "<group>"; };
+		1E51155324AC89EB00B8D7F0 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
+		1E51155624AC8A8F00B8D7F0 /* MemoVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoVO.swift; sourceTree = "<group>"; };
+		1E51155924AC8B1600B8D7F0 /* MyBowWow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyBowWow.xcdatamodel; sourceTree = "<group>"; };
+		1E51155B24AC8B9D00B8D7F0 /* MemoMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MemoMO+CoreDataClass.swift"; path = "/Users/edwardahn/Desktop/MyBow-Wow/My Bow-Wow/MemoMO+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		1E51155C24AC8B9D00B8D7F0 /* MemoMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MemoMO+CoreDataProperties.swift"; path = "/Users/edwardahn/Desktop/MyBow-Wow/My Bow-Wow/MemoMO+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		1E51155F24AC8D4500B8D7F0 /* MemoReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadViewController.swift; sourceTree = "<group>"; };
 		1E529D4A24AAF00E00AA272A /* My Bow-Wow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Bow-Wow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E529D4D24AAF00E00AA272A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E529D4F24AAF00E00AA272A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +47,13 @@
 		1E529D5624AAF00F00AA272A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E529D5924AAF00F00AA272A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E529D5B24AAF00F00AA272A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E529D6124AAFF8700AA272A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1E550B1124AD7D2E00C44594 /* MemoFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFormViewController.swift; sourceTree = "<group>"; };
+		1E550B1324AD818000C44594 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		1E550B1524AD832100C44594 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
+		1E550B1724AD835800C44594 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		658BBD50A1B875375DC2C4FE /* Pods_My_Bow_Wow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Bow_Wow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A990568BB1B819EFE9C959B4 /* Pods-My Bow-Wow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Bow-Wow.release.xcconfig"; path = "Target Support Files/Pods-My Bow-Wow/Pods-My Bow-Wow.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +61,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D2C1304A35B63BC9CADE02 /* Pods_My_Bow_Wow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E51155524AC8A8100B8D7F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E51155624AC8A8F00B8D7F0 /* MemoVO.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1E529D4124AAF00D00AA272A = {
 			isa = PBXGroup;
 			children = (
 				1E529D4C24AAF00E00AA272A /* My Bow-Wow */,
 				1E529D4B24AAF00E00AA272A /* Products */,
+				4621D2D3D5F299A653BB5E6E /* Pods */,
+				86FD2DCE40EBF05E5ED94993 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +97,53 @@
 		1E529D4C24AAF00E00AA272A /* My Bow-Wow */ = {
 			isa = PBXGroup;
 			children = (
+				1E51155524AC8A8100B8D7F0 /* Model */,
 				1E529D4D24AAF00E00AA272A /* AppDelegate.swift */,
 				1E529D4F24AAF00E00AA272A /* SceneDelegate.swift */,
 				1E529D5124AAF00E00AA272A /* ViewController.swift */,
 				1E529D5324AAF00E00AA272A /* Main.storyboard */,
 				1E529D5624AAF00F00AA272A /* Assets.xcassets */,
 				1E529D5824AAF00F00AA272A /* LaunchScreen.storyboard */,
+				1E529D6124AAFF8700AA272A /* GoogleService-Info.plist */,
 				1E529D5B24AAF00F00AA272A /* Info.plist */,
+				1E550B1924AD8A4E00C44594 /* Memo */,
+				1E51155B24AC8B9D00B8D7F0 /* MemoMO+CoreDataClass.swift */,
+				1E51155C24AC8B9D00B8D7F0 /* MemoMO+CoreDataProperties.swift */,
+				1E550B1324AD818000C44594 /* LocationViewController.swift */,
+				1E550B1724AD835800C44594 /* ResultTableViewCell.swift */,
+				1E550B1524AD832100C44594 /* ResultTableViewController.swift */,
+				1E51155824AC8B1600B8D7F0 /* MyBowWow.xcdatamodeld */,
 			);
 			path = "My Bow-Wow";
+			sourceTree = "<group>";
+		};
+		1E550B1924AD8A4E00C44594 /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				1E51155124AC885600B8D7F0 /* MemoDAO.swift */,
+				1E51154F24AC87A300B8D7F0 /* MemoListTableViewController.swift */,
+				1E51155324AC89EB00B8D7F0 /* MemoTableViewCell.swift */,
+				1E51155F24AC8D4500B8D7F0 /* MemoReadViewController.swift */,
+				1E550B1124AD7D2E00C44594 /* MemoFormViewController.swift */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
+		4621D2D3D5F299A653BB5E6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				13D9EC15662134BE58EDC079 /* Pods-My Bow-Wow.debug.xcconfig */,
+				A990568BB1B819EFE9C959B4 /* Pods-My Bow-Wow.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		86FD2DCE40EBF05E5ED94993 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				658BBD50A1B875375DC2C4FE /* Pods_My_Bow_Wow.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E529D5E24AAF00F00AA272A /* Build configuration list for PBXNativeTarget "My Bow-Wow" */;
 			buildPhases = (
+				D16D224723BEAC141F95D2E0 /* [CP] Check Pods Manifest.lock */,
 				1E529D4624AAF00D00AA272A /* Sources */,
 				1E529D4724AAF00D00AA272A /* Frameworks */,
 				1E529D4824AAF00D00AA272A /* Resources */,
+				F66447AD3426C40822CE2287 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E529D5A24AAF00F00AA272A /* LaunchScreen.storyboard in Resources */,
+				1E529D6224AAFF8700AA272A /* GoogleService-Info.plist in Resources */,
 				1E529D5724AAF00F00AA272A /* Assets.xcassets in Resources */,
 				1E529D5524AAF00E00AA272A /* Main.storyboard in Resources */,
 			);
@@ -133,14 +215,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D16D224723BEAC141F95D2E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-My Bow-Wow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F66447AD3426C40822CE2287 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Bow-Wow/Pods-My Bow-Wow-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Bow-Wow/Pods-My Bow-Wow-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Bow-Wow/Pods-My Bow-Wow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1E529D4624AAF00D00AA272A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E51155A24AC8B1600B8D7F0 /* MyBowWow.xcdatamodeld in Sources */,
 				1E529D5224AAF00E00AA272A /* ViewController.swift in Sources */,
+				1E51155424AC89EB00B8D7F0 /* MemoTableViewCell.swift in Sources */,
+				1E51155224AC885600B8D7F0 /* MemoDAO.swift in Sources */,
+				1E550B1624AD832100C44594 /* ResultTableViewController.swift in Sources */,
+				1E51155D24AC8B9D00B8D7F0 /* MemoMO+CoreDataProperties.swift in Sources */,
+				1E51155724AC8A8F00B8D7F0 /* MemoVO.swift in Sources */,
 				1E529D4E24AAF00E00AA272A /* AppDelegate.swift in Sources */,
+				1E550B1424AD818000C44594 /* LocationViewController.swift in Sources */,
+				1E51156024AC8D4500B8D7F0 /* MemoReadViewController.swift in Sources */,
+				1E550B1224AD7D2E00C44594 /* MemoFormViewController.swift in Sources */,
+				1E51155E24AC8B9D00B8D7F0 /* MemoMO+CoreDataClass.swift in Sources */,
 				1E529D5024AAF00E00AA272A /* SceneDelegate.swift in Sources */,
+				1E550B1824AD835800C44594 /* ResultTableViewCell.swift in Sources */,
+				1E51155024AC87A300B8D7F0 /* MemoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,15 +418,19 @@
 		};
 		1E529D5F24AAF00F00AA272A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13D9EC15662134BE58EDC079 /* Pods-My Bow-Wow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_TEAM = 3M62UV9XR3;
 				INFOPLIST_FILE = "My Bow-Wow/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sangwookahn.My-Bow-Wow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -300,15 +440,19 @@
 		};
 		1E529D6024AAF00F00AA272A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A990568BB1B819EFE9C959B4 /* Pods-My Bow-Wow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_TEAM = 3M62UV9XR3;
 				INFOPLIST_FILE = "My Bow-Wow/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sangwookahn.My-Bow-Wow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -338,6 +482,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1E51155824AC8B1600B8D7F0 /* MyBowWow.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1E51155924AC8B1600B8D7F0 /* MyBowWow.xcdatamodel */,
+			);
+			currentVersion = 1E51155924AC8B1600B8D7F0 /* MyBowWow.xcdatamodel */;
+			path = MyBowWow.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1E529D4224AAF00D00AA272A /* Project object */;
 }
