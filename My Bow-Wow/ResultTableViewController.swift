@@ -39,6 +39,12 @@ class ResultTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBannerView()
+        let nTitle = UILabel(frame: CGRect(x:0, y:0, width: 200, height: 40))
+        nTitle.textAlignment = .center
+        nTitle.font = .boldSystemFont(ofSize: 23)
+        nTitle.textColor = #colorLiteral(red: 0.5789041519, green: 0.3935802579, blue: 0.3027411699, alpha: 1)
+        nTitle.text = "Detail List"
+        self.navigationItem.titleView = nTitle
     }
 
     // MARK: - Table view data source

@@ -35,10 +35,12 @@
 	<string>Camera usage is required.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>User location needs to find pet hospitals location.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>would like to access to your microphone</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>would like to save photos to your photo gallery</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>would like access to your photo gallery</string>
+	<string>would like to access to your photo gallery</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

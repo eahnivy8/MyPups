@@ -41,11 +41,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             coloredAppearance.configureWithOpaqueBackground()
             let colorLiteral = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
             coloredAppearance.backgroundColor = colorLiteral
-            coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.orange]
-            coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.orange]
+            coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.brown]
+            coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.brown]
             UINavigationBar.appearance().standardAppearance = coloredAppearance
             UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+            UITabBar.appearance().barTintColor = #colorLiteral(red: 0.9527944922, green: 0.8348175287, blue: 0.5657938719, alpha: 1)
+            UITabBar.appearance().tintColor = .brown
         } else {
+            UITabBar.appearance().barTintColor = #colorLiteral(red: 0.9527944922, green: 0.8348175287, blue: 0.5657938719, alpha: 1)
+            UITabBar.appearance().tintColor = .brown
             // Fallback on earlier versions
         }
         FirebaseApp.configure()

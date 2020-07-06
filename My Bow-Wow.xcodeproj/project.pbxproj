@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03D2C1304A35B63BC9CADE02 /* Pods_My_Bow_Wow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658BBD50A1B875375DC2C4FE /* Pods_My_Bow_Wow.framework */; };
+		1E4A8FB124B170FE00DEB73E /* memo-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E4A8FB024B170FE00DEB73E /* memo-background@2x.png */; };
 		1E51155024AC87A300B8D7F0 /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51154F24AC87A300B8D7F0 /* MemoListTableViewController.swift */; };
 		1E51155224AC885600B8D7F0 /* MemoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51155124AC885600B8D7F0 /* MemoDAO.swift */; };
 		1E51155424AC89EB00B8D7F0 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51155324AC89EB00B8D7F0 /* MemoTableViewCell.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		13D9EC15662134BE58EDC079 /* Pods-My Bow-Wow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Bow-Wow.debug.xcconfig"; path = "Target Support Files/Pods-My Bow-Wow/Pods-My Bow-Wow.debug.xcconfig"; sourceTree = "<group>"; };
+		1E4A8FB024B170FE00DEB73E /* memo-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memo-background@2x.png"; sourceTree = "<group>"; };
 		1E51154F24AC87A300B8D7F0 /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
 		1E51155124AC885600B8D7F0 /* MemoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDAO.swift; sourceTree = "<group>"; };
 		1E51155324AC89EB00B8D7F0 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				1E529D5124AAF00E00AA272A /* ViewController.swift */,
 				1E529D5324AAF00E00AA272A /* Main.storyboard */,
 				1E529D5624AAF00F00AA272A /* Assets.xcassets */,
+				1E4A8FB024B170FE00DEB73E /* memo-background@2x.png */,
 				1E529D5824AAF00F00AA272A /* LaunchScreen.storyboard */,
 				1E529D6124AAFF8700AA272A /* GoogleService-Info.plist */,
 				1E529D5B24AAF00F00AA272A /* Info.plist */,
@@ -206,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E4A8FB124B170FE00DEB73E /* memo-background@2x.png in Resources */,
 				1E529D5A24AAF00F00AA272A /* LaunchScreen.storyboard in Resources */,
 				1E529D6224AAFF8700AA272A /* GoogleService-Info.plist in Resources */,
 				1E529D5724AAF00F00AA272A /* Assets.xcassets in Resources */,
@@ -422,7 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.2;
+				CURRENT_PROJECT_VERSION = 1.0.5;
 				DEVELOPMENT_TEAM = 3M62UV9XR3;
 				INFOPLIST_FILE = "My Bow-Wow/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -430,7 +434,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sangwookahn.My-Bow-Wow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -444,7 +448,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.2;
+				CURRENT_PROJECT_VERSION = 1.0.5;
 				DEVELOPMENT_TEAM = 3M62UV9XR3;
 				INFOPLIST_FILE = "My Bow-Wow/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -452,7 +456,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sangwookahn.My-Bow-Wow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

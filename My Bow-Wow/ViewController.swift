@@ -6,6 +6,7 @@ struct Puppy: Codable {
     let message: String
 }
 class ViewController: UIViewController, WKNavigationDelegate {
+    
     var interstitial: GADInterstitial!
     var interstitial1: GADInterstitial!
     @IBOutlet weak var bannerView1: GADBannerView!
@@ -40,6 +41,12 @@ class ViewController: UIViewController, WKNavigationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nTitle = UILabel(frame: CGRect(x:0, y:0, width: 200, height: 40))
+             nTitle.textAlignment = .center
+             nTitle.font = .boldSystemFont(ofSize: 23)
+             nTitle.textColor = #colorLiteral(red: 0.5789041519, green: 0.3935802579, blue: 0.3027411699, alpha: 1)
+             nTitle.text = "My Pups"
+             self.navigationItem.titleView = nTitle
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-8233515273063706/3834189331")
         let request = GADRequest()
         interstitial.load(request)

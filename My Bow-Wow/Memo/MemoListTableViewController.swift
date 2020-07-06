@@ -46,7 +46,12 @@ class MemoListTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Pet Diary"
+        let nTitle = UILabel(frame: CGRect(x:0, y:0, width: 200, height: 40))
+             nTitle.textAlignment = .center
+             nTitle.font = .boldSystemFont(ofSize: 23)
+             nTitle.textColor = #colorLiteral(red: 0.5789041519, green: 0.3935802579, blue: 0.3027411699, alpha: 1)
+             nTitle.text = "Pet Diary"
+             self.navigationItem.titleView = nTitle
         setupBannerView()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(MemoListTableViewController.add(_:)))
         let memo1 = MemoVO()

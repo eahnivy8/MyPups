@@ -234,6 +234,7 @@ class LocationViewController: UIViewController, UITextFieldDelegate, MKMapViewDe
         tf.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         tf.borderStyle = .roundedRect
         tf.font = .systemFont(ofSize: 13)
+        tf.textColor = #colorLiteral(red: 0.5789041519, green: 0.3935802579, blue: 0.3027411699, alpha: 1)
         tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.spellCheckingType = .no
