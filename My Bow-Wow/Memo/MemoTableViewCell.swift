@@ -1,11 +1,3 @@
-//
-//  MemoTableViewCell.swift
-//  My Bow-Wow
-//
-//  Created by Eddie Ahn on 2020/07/01.
-//  Copyright © 2020 Sang Wook Ahn. All rights reserved.
-//
-
 import UIKit
 
 class MemoTableViewCell: UITableViewCell {

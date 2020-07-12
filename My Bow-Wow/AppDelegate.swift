@@ -1,4 +1,3 @@
-
 import UIKit
 import Firebase
 import GoogleMobileAds
@@ -6,10 +5,14 @@ import CoreLocation
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
     
     var window: UIWindow?
     var memoList = [MemoVO]()
+    var interstitial: GADInterstitial?
+    var launchScreenView: UIView?
+    
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "MyBowWow")
         container.loadPersistentStores() {
@@ -47,25 +50,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
             UITabBar.appearance().barTintColor = #colorLiteral(red: 0.9527944922, green: 0.8348175287, blue: 0.5657938719, alpha: 1)
             UITabBar.appearance().tintColor = .brown
+            
         } else {
             UITabBar.appearance().barTintColor = #colorLiteral(red: 0.9527944922, green: 0.8348175287, blue: 0.5657938719, alpha: 1)
             UITabBar.appearance().tintColor = .brown
             // Fallback on earlier versions
         }
+        if let view = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()?.view {
+             launchScreenView = view
+             view.translatesAutoresizingMaskIntoConstraints = false
+            
+             if let rootView = window?.rootViewController?.view {
+                 rootView.addSubview(view)
+                 var constraints = [NSLayoutConstraint]()
+                 constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[view]-0-|", options: [], metrics: nil, views: ["view": view])
+                 constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[view]-0-|", options: [], metrics: nil, views: ["view": view])
+                 rootView.addConstraints(constraints)
+             }
+         }
+         interstitial = GADInterstitial(adUnitID: "ca-app-pub-8233515273063706/4122845826")
+         interstitial?.delegate = self
+        
+         let request = GADRequest()
+         interstitial?.load(request)
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         return true
     }
-
+    func interstitialDidReceiveAd(_ ad: GADInterstitial!){
+        guard let viewController = window?.rootViewController else { return }
+        ad.present(fromRootViewController: viewController)
+    }
+    func interstitialWillDismissScreen(_ ad: GADInterstitial!) {
+        launchScreenView?.removeFromSuperview()
+    }
     // MARK: UISceneSession Lifecycle
-
+    
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
@@ -75,6 +102,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         self.saveContext()
     }
-
+    
 }
 

@@ -39,6 +39,7 @@ class ResultTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBannerView()
+        bannerView2.isHidden = false
         let nTitle = UILabel(frame: CGRect(x:0, y:0, width: 200, height: 40))
         nTitle.textAlignment = .center
         nTitle.font = .boldSystemFont(ofSize: 23)

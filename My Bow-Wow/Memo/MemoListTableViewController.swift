@@ -53,6 +53,7 @@ class MemoListTableViewController: UITableViewController {
              nTitle.text = "Pet Diary"
              self.navigationItem.titleView = nTitle
         setupBannerView()
+        bannerView3.isHidden = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(MemoListTableViewController.add(_:)))
         let memo1 = MemoVO()
         memo1.title = "things to prepare"

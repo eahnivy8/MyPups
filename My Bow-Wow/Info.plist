@@ -32,15 +32,13 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Camera usage is required.</string>
+	<string>My Pups uses a camera to enable you to upload pictures of pets</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>User location needs to find pet hospitals location.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>would like to access to your microphone</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>would like to save photos to your photo gallery</string>
+	<string>My Pups uses photo library to enable you to download and save pictures of pets</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>would like to access to your photo gallery</string>
+	<string>My Pups uses photo library to enable you to download and save pictures of pets</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

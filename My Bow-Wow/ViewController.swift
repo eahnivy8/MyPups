@@ -58,6 +58,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         bannerView1.adUnitID = "ca-app-pub-8233515273063706/7686089849"
         bannerView1.rootViewController = self
         bannerView1.load(GADRequest())
+        bannerView1.isHidden = false
         
         let urlString = "https://dog.ceo/api/breeds/image/random"
         guard let url = URL(string: urlString) else { return }

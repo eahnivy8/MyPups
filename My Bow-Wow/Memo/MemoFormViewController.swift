@@ -1,53 +1,27 @@
 
 import UIKit
+import GoogleMobileAds
 import MobileCoreServices
 
-class MemoFormViewController: UIViewController {
+class MemoFormViewController: UIViewController, GADInterstitialDelegate {
     var subject: String!
     lazy var dao = MemoDAO()
-    //    let imagePicker = UIImagePickerController()
+    var interstitial: GADInterstitial!
+    let imagePicker = UIImagePickerController()
     var capturedImage: UIImage!
-    var flagImageSave = false
-    var videoURL: URL!
-    
-    @IBOutlet weak var segmentedOutlet: UISegmentedControl!
-    
-    @IBAction func segmentedAction(_ sender: UISegmentedControl) {
-        if segmentedOutlet.selectedSegmentIndex == 0 {
-            flagImageSave = true
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.mediaTypes = [kUTTypeMovie as String]
-            imagePicker.sourceType = .camera
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true)
-        } else {
-            flagImageSave = false
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.mediaTypes = [kUTTypeMovie as String]
-            imagePicker.sourceType = .photoLibrary
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true)
-        }
-    }
+
     @IBAction func photo(_ sender: Any) {
-        //이미지 저장기능을 사용하지 않기 때문에 설정.
-        flagImageSave = false
-        //이미지를 선택하거나 취소했을때 호출될 메소드의 위치를 설정.
-        let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        //이미지피커의 데이터 소스 속성을 photolibrary로 설정.
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         self.present(imagePicker, animated: true)
     }
-    
+    func createAd() -> GADInterstitial {
+        let inter = GADInterstitial(adUnitID: "ca-app-pub-8233515273063706/4497260661")
+        inter.load(GADRequest())
+        return inter
+    }
     @IBAction func takePicture(_ sender: Any) {
-        //이미지 저장기능을 사용해야하기 때문에 설정.
-        flagImageSave = true
-        //이미지를 선택하거나 선택취소했을때 호출될 메소드 지정.
-        let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = true
@@ -100,9 +74,23 @@ class MemoFormViewController: UIViewController {
             NotificationCenter.default.removeObserver(token)
         }
     }
-    
+    @objc func keyboardShow(notification:NSNotification){
+        var frame = preview.frame
+        frame.origin.y = frame.origin.y - 200
+        preview.frame = frame
+    }
+    //키보드가 사라질때 호출되는 메소드
+    @objc func keyboardHide(notification:NSNotification){
+        var frame = preview.frame
+        frame.origin.y = frame.origin.y + 200
+        preview.frame = frame
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-8233515273063706/4497260661")
+        let request = GADRequest()
+        interstitial.load(request)
+        self.contents.becomeFirstResponder()
         let nTitle = UILabel(frame: CGRect(x:0, y:0, width: 200, height: 40))
         nTitle.textAlignment = .center
         nTitle.font = .boldSystemFont(ofSize: 23)
@@ -110,32 +98,35 @@ class MemoFormViewController: UIViewController {
         nTitle.text = "New Memo"
         self.navigationItem.titleView = nTitle
         self.contents.delegate = self
-//        let bgImage = UIImage(named:"memo-background.png")!
-//        self.view.backgroundColor = UIColor(patternImage: bgImage)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-//        self.contents.layer.borderWidth = 0
-//        self.contents.layer.borderColor = UIColor.clear.cgColor
-//        self.contents.backgroundColor = UIColor.clear
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+//                let bgImage = UIImage(named:"memo-background.png")!
+//                self.view.backgroundColor = UIColor(patternImage: bgImage)
+//
+//                self.contents.layer.borderWidth = 0
+//                self.contents.layer.borderColor = UIColor.clear.cgColor
+//                self.contents.backgroundColor = UIColor.clear
         //contents.becomeFirstResponder()
         // observer 등록 코드. 보통 viewdidload에서 구현.
         
-        willShowToken = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main, using: { [weak self] (noti) in
-            guard let strongSelf = self else { return }
-            //             if let keyboardSize = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            //                 let keyboardHeight = keyboardSize.cgRectValue.height
-            let posY = strongSelf.preview.frame.origin.y - 150
-            UIView.animate(withDuration: 0.25, animations: {
-                strongSelf.preview.frame = CGRect( x: strongSelf.preview.frame.origin.x, y: posY, width: strongSelf.preview.frame.size.width, height: strongSelf.preview.frame.height)
-            })
-        })
-        
-        willHideToken = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main, using: { [weak self] (noti) in
-            guard let strongSelf = self else { return }
-            let posY = strongSelf.preview.frame.origin.y + 150
-            UIView.animate(withDuration: 0.25, animations: {
-                strongSelf.preview.frame = CGRect( x: strongSelf.preview.frame.origin.x, y: posY, width: strongSelf.preview.frame.size.width, height: strongSelf.preview.frame.height)
-            })
-        })
+//        willShowToken = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main, using: { [weak self] (noti) in
+//            guard let strongSelf = self else { return }
+//            //             if let keyboardSize = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//            //                 let keyboardHeight = keyboardSize.cgRectValue.height
+//            let posY = strongSelf.preview.frame.origin.y - 120
+//            UIView.animate(withDuration: 0.25, animations: {
+//                strongSelf.preview.frame = CGRect( x: strongSelf.preview.frame.origin.x, y: posY, width: strongSelf.preview.frame.size.width, height: strongSelf.preview.frame.height)
+//            })
+//        })
+//        
+//        willHideToken = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main, using: { [weak self] (noti) in
+//            guard let strongSelf = self else { return }
+//            let posY = strongSelf.preview.frame.origin.y + 120
+//            UIView.animate(withDuration: 0.25, animations: {
+//                strongSelf.preview.frame = CGRect( x: strongSelf.preview.frame.origin.x, y: posY, width: strongSelf.preview.frame.size.width, height: strongSelf.preview.frame.height)
+//            })
+//        })
         //        let style = NSMutableParagraphStyle()
         //        style.lineSpacing = 9
         //        self.contents.attributedText = NSAttributedString(string: " ", attributes: [NSAttributedString.Key.paragraphStyle: style])
@@ -148,7 +139,7 @@ class MemoFormViewController: UIViewController {
         self.contents.resignFirstResponder()
     }
     
-    //image picker
+    //    //image picker
     //    func presentPicker(source: UIImagePickerController.SourceType) {
     //        guard UIImagePickerController.isSourceTypeAvailable(source) == true else {
     //            let alert = UIAlertController(title: "not available type", message: nil, preferredStyle: .alert)
@@ -161,42 +152,36 @@ class MemoFormViewController: UIViewController {
     //        picker.delegate = self
     //        picker.allowsEditing = true
     //        self.present(picker, animated: false)
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    //
+    //        /*
+    //         // MARK: - Navigation
+    //
+    //         // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //         // Get the new view controller using segue.destination.
+    //         // Pass the selected object to the new view controller.
+    //         }
+    //         */
+    //
+    //    }
     
 }
 
 extension MemoFormViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    //이미지 선택을 완료했을때 호출되는 메소드
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        //이미지와 동영상을 구분하기 위해서 타입을 가져옴.
-        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
-        if mediaType.isEqual(to: kUTTypeImage as NSString as String) {
-            capturedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-            if flagImageSave {
-                UIImageWriteToSavedPhotosAlbum(capturedImage, self, nil, nil)
-            }
-            self.preview.image = capturedImage
-        } else if mediaType.isEqual(to: kUTTypeMovie as NSString as String) {
-            if flagImageSave == true{
-                videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL
-                UISaveVideoAtPathToSavedPhotosAlbum(videoURL.relativePath, self, nil, nil)
+        self.preview.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        picker.dismiss(animated: false) {
+            if self.interstitial.isReady {
+                self.interstitial.present(fromRootViewController: self)
+                self.interstitial = self.createAd()
             }
         }
-        //이미지 피커 컨트롤러를 닫는다.
-        picker.dismiss(animated: false)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: false, completion: nil)
     }
+    
 }
 
 extension MemoFormViewController: UITextViewDelegate {

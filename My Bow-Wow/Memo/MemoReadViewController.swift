@@ -44,6 +44,7 @@ class MemoReadViewController: UIViewController {
 //        let bgImage = UIImage(named:"memo-background.png")!
 //        self.view.backgroundColor = UIColor(patternImage: bgImage)
         setupBannerView()
+        bannerView4.isHidden = false
         //self.subject.text = param?.title
         self.contents.text = param?.contents
         self.img.image = param?.image
