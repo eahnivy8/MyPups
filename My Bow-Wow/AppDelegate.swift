@@ -10,9 +10,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
     var window: UIWindow?
     var memoList = [MemoVO]()
     var interstitial: GADInterstitial?
-    var launchScreenView: UIView?
-    
-    
+    //var launchScreenView: UIView?
+
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "MyBowWow")
         container.loadPersistentStores() {
@@ -56,36 +55,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
             UITabBar.appearance().tintColor = .brown
             // Fallback on earlier versions
         }
-        if let view = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()?.view {
-             launchScreenView = view
-             view.translatesAutoresizingMaskIntoConstraints = false
-            
-             if let rootView = window?.rootViewController?.view {
-                 rootView.addSubview(view)
-                 var constraints = [NSLayoutConstraint]()
-                 constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[view]-0-|", options: [], metrics: nil, views: ["view": view])
-                 constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[view]-0-|", options: [], metrics: nil, views: ["view": view])
-                 rootView.addConstraints(constraints)
-             }
-         }
-         interstitial = GADInterstitial(adUnitID: "ca-app-pub-8233515273063706/4122845826")
-         interstitial?.delegate = self
-        
-         let request = GADRequest()
-         interstitial?.load(request)
-        FirebaseApp.configure()
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        //        if let view = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()?.view {
+        //             launchScreenView = view
+        //             view.translatesAutoresizingMaskIntoConstraints = false
+        //
+        //             if let rootView = window?.rootViewController?.view {
+        //                 rootView.addSubview(view)
+        //                 var constraints = [NSLayoutConstraint]()
+        //                 constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[view]-0-|", options: [], metrics: nil, views: ["view": view])
+        //                 constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[view]-0-|", options: [], metrics: nil, views: ["view": view])
+        //                 rootView.addConstraints(constraints)
+        //             }
+        //         }
+        //         interstitial = GADInterstitial(adUnitID: "ca-app-pub-8233515273063706/4122845826")
+        //         interstitial?.delegate = self
+        //         let request = GADRequest()
+        //         interstitial?.load(request)
+        //        FirebaseApp.configure()
+        //        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        //        return true
+        //    }
+        //    func interstitialDidReceiveAd(_ ad: GADInterstitial!){
+        //        guard let viewController = window?.rootViewController else { return }
+        //        ad.present(fromRootViewController: viewController)
+        //    }
+        //    func interstitialWillDismissScreen(_ ad: GADInterstitial!) {
+        //        launchScreenView?.removeFromSuperview()
+        //    }
         return true
     }
-    func interstitialDidReceiveAd(_ ad: GADInterstitial!){
-        guard let viewController = window?.rootViewController else { return }
-        ad.present(fromRootViewController: viewController)
-    }
-    func interstitialWillDismissScreen(_ ad: GADInterstitial!) {
-        launchScreenView?.removeFromSuperview()
-    }
-    // MARK: UISceneSession Lifecycle
-    
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
@@ -104,4 +102,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
     }
     
 }
+
 
